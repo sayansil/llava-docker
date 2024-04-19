@@ -11,7 +11,7 @@ variable "APP" {
 }
 
 variable "RELEASE" {
-    default = "1.5.0"
+    default = "1.6.0"
 }
 
 variable "CU_VERSION" {
@@ -43,7 +43,7 @@ target "default" {
         INDEX_URL = "https://download.pytorch.org/whl/cu${CU_VERSION}"
         TORCH_VERSION = "${TORCH_VERSION}+cu${CU_VERSION}"
         XFORMERS_VERSION = "0.0.23.post1+cu${CU_VERSION}"
-        LLAVA_COMMIT = "9d8c19ed26094f31ffb3ef5bb0b4efb9c5713884"
+        LLAVA_COMMIT = "0b3b478e7cc8e55d7ca312ecd2ff5a90690d08d5"
         LLAVA_MODEL = "liuhaotian/llava-v1.6-mistral-7b"
         VENV_PATH = "/workspace/venvs/${APP}"
     }
