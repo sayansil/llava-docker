@@ -23,7 +23,7 @@ variable "BASE_IMAGE_REPOSITORY" {
 }
 
 variable "BASE_IMAGE_VERSION" {
-    default = "1.0.2"
+    default = "1.4.0"
 }
 
 variable "CUDA_VERSION" {
