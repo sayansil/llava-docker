@@ -119,6 +119,7 @@ variable is not set, the model will default to `liuhaotian/llava-v1.6-mistral-7b
 | JUPYTER_LAB_PASSWORD | Set a password for Jupyter lab                   | not set - no password            |
 | DISABLE_AUTOLAUNCH   | Disable LLaVA from launching automatically       | (not set)                        |
 | DISABLE_SYNC         | Disable syncing if using a RunPod network volume | (not set)                        |
+| NO_GPU_OPTIMIZATION  | Disable GPU optimization for A100/H100           | (not set)                        |
 | MODEL                | The path of the Huggingface model                | liuhaotian/llava-v1.6-mistral-7b |
 
 ## Logs
