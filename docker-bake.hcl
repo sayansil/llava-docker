@@ -11,11 +11,11 @@ variable "APP" {
 }
 
 variable "RELEASE" {
-    default = "1.6.0"
+    default = "1.7.0"
 }
 
 variable "CU_VERSION" {
-    default = "118"
+    default = "121"
 }
 
 variable "BASE_IMAGE_REPOSITORY" {
@@ -23,11 +23,11 @@ variable "BASE_IMAGE_REPOSITORY" {
 }
 
 variable "BASE_IMAGE_VERSION" {
-    default = "1.4.0"
+    default = "1.7.0"
 }
 
 variable "CUDA_VERSION" {
-    default = "11.8.0"
+    default = "12.1.1"
 }
 
 variable "TORCH_VERSION" {

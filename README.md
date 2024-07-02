@@ -10,13 +10,14 @@
 ## Installs
 
 * Ubuntu 22.04 LTS
-* CUDA 11.8
+* CUDA 12.1
 * Python 3.10.12
 * [LLaVA](
   https://github.com/haotian-liu/llava) v1.2.0 (LLaVA 1.6)
 * Torch 2.1.2
 * xformers 0.0.23.post1
-* Jupyter Lab
+* [Jupyter Lab](https://github.com/jupyterlab/jupyterlab)
+* [code-server](https://github.com/coder/code-server)
 * [runpodctl](https://github.com/runpod/runpodctl)
 * [OhMyRunPod](https://github.com/kodxana/OhMyRunPod)
 * [RunPod File Uploader](https://github.com/kodxana/RunPod-FilleUploader)
@@ -67,9 +68,9 @@ docker run -d \
   --gpus all \
   -v /workspace \
   -p 3000:3001 \
+  -p 7777:7777 \
   -p 8888:8888 \
   -p 2999:2999 \
-  -e VENV_PATH="/workspace/venvs/llava" \
   ashleykza/llava:latest
 ```
 
@@ -108,6 +109,7 @@ variable is not set, the model will default to `liuhaotian/llava-v1.6-mistral-7b
 | Connect Port | Internal Port | Description          |
 |--------------|---------------|----------------------|
 | 3000         | 3001          | LLaVA                |
+| 7777         | 7777          | Code Server          |
 | 8888         | 8888          | Jupyter Lab          |
 | 2999         | 2999          | RunPod File Uploader |
 
@@ -115,7 +117,6 @@ variable is not set, the model will default to `liuhaotian/llava-v1.6-mistral-7b
 
 | Variable             | Description                                      | Default                          |
 |----------------------|--------------------------------------------------|----------------------------------|
-| VENV_PATH            | Set the path for the Python venv for the app     | /workspace/venvs/llava           |
 | JUPYTER_LAB_PASSWORD | Set a password for Jupyter lab                   | not set - no password            |
 | DISABLE_AUTOLAUNCH   | Disable LLaVA from launching automatically       | (not set)                        |
 | DISABLE_SYNC         | Disable syncing if using a RunPod network volume | (not set)                        |
@@ -153,7 +154,7 @@ If you are running locally, add a port mapping for port 5000.
 fuser -k 10000/tcp 40000/tcp
 
 # Install dependencies
-source /workspace/venvs/llava/bin/activate
+source /venv/bin/activate
 pip3 install flask protobuf
 cd /workspace/LLaVA
 export HF_HOME="/workspace"
