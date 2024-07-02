@@ -42,7 +42,7 @@ target "default" {
         BASE_IMAGE = "${BASE_IMAGE_REPOSITORY}:${BASE_IMAGE_VERSION}-cuda${CUDA_VERSION}-torch${TORCH_VERSION}"
         INDEX_URL = "https://download.pytorch.org/whl/cu${CU_VERSION}"
         TORCH_VERSION = "${TORCH_VERSION}+cu${CU_VERSION}"
-        XFORMERS_VERSION = "0.0.23.post1+cu${CU_VERSION}"
+        XFORMERS_VERSION = "0.0.23.post1"
         LLAVA_COMMIT = "0b3b478e7cc8e55d7ca312ecd2ff5a90690d08d5"
         LLAVA_MODEL = "liuhaotian/llava-v1.6-mistral-7b"
         VENV_PATH = "/workspace/venvs/${APP}"
